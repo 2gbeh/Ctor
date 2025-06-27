@@ -27,12 +27,12 @@ dotnet tool install --global dotnet-ef
 
 # Run web server
 dotnet watch run
-> http://localhost:5288/swagger
+> http://localhost:5288/api
 ```
 
 ## Documentation
 
-| Name                                                     | URL                                                                                                         |
+| Title                                                     | URL                                                                                                         |
 | :------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------- |
 | Build a web API with minimal API, ASP.NET Core, and .NET | https://learn.microsoft.com/en-us/training/modules/build-web-api-minimal-api/?WT.mc_id=dotnet-35129-website |
 | Build REST APIs in .NET 9 (freeCodeCamp.org)             | https://www.youtube.com/watch?app=desktop&v=38GNKtclDdE                                                     |
