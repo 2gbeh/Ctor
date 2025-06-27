@@ -1,0 +1,87 @@
+# Build results
+bin/
+obj/
+out/
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# ASP.NET specific
+*.db
+*.pidb
+*.svclog
+
+# IIS Express
+.vs/
+*.vspscc
+*.vssscc
+
+# Dotnet CLI
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Coverage reports
+coverage/
+coverage*.json
+TestResults/
+*.coverage
+*.coveragexml
+
+# NCrunch
+*.ncrunch*
+*.nunit.*
+*.vshost.*
+*.dotCover
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+*.nuspec
+
+# Microsoft Auth files
+*.pfx
+*.key
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# EF Core Migrations snapshots
+**/Migrations/*Snapshot.cs
+
+# Local Secrets
+secrets.json
+
+# Optional: remove generated wwwroot/lib if using LibMan
+wwwroot/lib/
+libman.json
+
+# Optional: dotenv config
+.env
+/__ignore__
+
