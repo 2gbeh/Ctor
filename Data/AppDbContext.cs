@@ -9,7 +9,7 @@ public class AppDbContext : DbContext
 {
     public DbSet<User> Users { get; set; }
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
-    private static void SetSoftDeleteFilter<TEntity>(ModelBuilder modelBuilder) where TEntity : BaseModelEntity
+    private static void SetSoftDeleteFilter<TEntity>(ModelBuilder modelBuilder) where TEntity : Model
     {
         modelBuilder.Entity<TEntity>().HasQueryFilter(e => e.DeletedAt == null);
     }
@@ -17,10 +17,10 @@ public class AppDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        // Apply global filter to all entities inheriting BaseModelEntity
+        // Apply global filter to all entities inheriting Base
         foreach (var entityType in modelBuilder.Model.GetEntityTypes())
         {
-            if (typeof(BaseModelEntity).IsAssignableFrom(entityType.ClrType))
+            if (typeof(Model).IsAssignableFrom(entityType.ClrType))
             {
                 var method = typeof(AppDbContext)
                     .GetMethod(nameof(SetSoftDeleteFilter), BindingFlags.NonPublic | BindingFlags.Static)?
@@ -32,7 +32,7 @@ public class AppDbContext : DbContext
     }
     public override int SaveChanges()
     {
-        foreach (var entry in ChangeTracker.Entries<BaseModelEntity>())
+        foreach (var entry in ChangeTracker.Entries<Model>())
         {
             if (entry.State == EntityState.Modified)
             {

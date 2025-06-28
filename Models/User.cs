@@ -2,7 +2,7 @@ using Ctor.Entities;
 
 namespace Ctor.Models;
 
-public class User : BaseModelEntity
+public class User : Model
 {
   public string? AvatarUrl { get; set; }                  // Avatar image URL
   public string? Name { get; set; }

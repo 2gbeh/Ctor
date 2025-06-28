@@ -1,6 +1,6 @@
-namespace Ctor.Entities;
+namespace Ctor.Models;
 
-public abstract class BaseModelEntity
+public abstract class Model
 {
   public int Id { get; set; }                          // Internal PK
   public Guid Uuid { get; set; } = Guid.NewGuid();     // Public ID
