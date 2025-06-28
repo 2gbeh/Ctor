@@ -32,12 +32,14 @@ dotnet watch run
 
 ## Documentation
 
-| Title                                                     | URL                                                                                                         |
-| :------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------- |
-| Build a web API with minimal API, ASP.NET Core, and .NET | https://learn.microsoft.com/en-us/training/modules/build-web-api-minimal-api/?WT.mc_id=dotnet-35129-website |
-| Build REST APIs in .NET 9 (freeCodeCamp.org)             | https://www.youtube.com/watch?app=desktop&v=38GNKtclDdE                                                     |
-| ASP.NET Core Web API .NET 6 2022 (Teddy Smith)           | https://www.youtube.com/playlist?list=PL82C6-O4XrHdiS10BLh23x71ve9mQCln0                                    |
-
+| Title                                        | URL                                                                                                         |
+| :------------------------------------------- | :---------------------------------------------------------------------------------------------------------- |
+| C# Tutorial                                  | https://www.w3schools.com/cs/index.php                                                                      |
+| Web API .NET 6 2022 (Teddy Smith)            | https://www.youtube.com/playlist?list=PL82C6-O4XrHdiS10BLh23x71ve9mQCln0                                    |
+| REST APIs in .NET 9 (freeCodeCamp.org)       | https://www.youtube.com/watch?app=desktop&v=38GNKtclDdE                                                     |
+| Getting Started with Minimal API             | https://learn.microsoft.com/en-us/training/modules/build-web-api-minimal-api/?WT.mc_id=dotnet-35129-website |
+| Intro to Web API in .NET 6 (IAmTimCorey)     | https://www.youtube.com/watch?app=desktop&v=87oOF9Ve-KA                                                     |
+| Minimal API in .NET 6 - Part 2 (IAmTimCorey) | https://www.youtube.com/watch?app=desktop&v=5tYSO5mAjXs                                                     |
 
 ## Screenshots
 

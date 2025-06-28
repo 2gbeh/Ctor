@@ -1,39 +1,26 @@
-using Microsoft.OpenApi.Models;
-using Ctor.Lib;
+using Ctor.Extensions;
 
-var builder = WebApplication.CreateBuilder(args);
+// Create a new WebApplication builder
+var builder = WebApplication.CreateBuilder(args); 
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-// builder.Services.AddOpenApi();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new OpenApiInfo
-    {
-        Title = "Babago API",
-        Description = "Dispatch & Logistics Services",
-        Version = "v1"
-    });
-});
+builder.Services.AddAppDbContext(builder.Configuration);
+builder.Services.AddCustomControllers();
+builder.Services.AddSwaggerDocumentation();
 
+// Build the application pipeline
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    // app.MapOpenApi();
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Babago API V1");
-    });
+    // Maps OpenAPI metadata endpoints
+    app.MapOpenApi();
 }
 
-app.UseHttpsRedirection();
+// Apply swagger ui middleware
+app.UseSwaggerDocumentation();
 
-var api = app.MapGroup("/api");
-api.MapGet("/weather-forecast", WeatherForecast.Handle).WithName("GetWeatherForecast");
+// Forces HTTPS for all requests
+app.UseHttpsRedirection(); 
 
-app.Run();
-
+// Runs the web application
+app.Run(); 
