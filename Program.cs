@@ -16,13 +16,8 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-// Enables middleware to serve Swagger JSON
-app.UseSwagger(); 
-app.UseSwaggerUI(c =>
-{
-    // Adds Swagger UI page
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Babago API V1");
-});
+// Apply swagger ui middleware
+app.UseSwaggerDocumentation();
 
 // Forces HTTPS for all requests
 app.UseHttpsRedirection(); 

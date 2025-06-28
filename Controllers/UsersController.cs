@@ -16,7 +16,7 @@ public class UsersController : Controller<User>
         _context = context;
     }
 
-    // PATCH: api/users/{uuid}
+    // PATCH: users/{uuid}
     [HttpPatch("{uuid}")]
     public async Task<IActionResult> Update(Guid uuid, [FromBody] UpdateUserDto patchData)
     {

@@ -23,32 +23,23 @@ public abstract class Controller<T> : ControllerBase where T : Model
     return await _db.ToListAsync();
   }
 
-  [HttpGet("{id}")]
-  public virtual async Task<ActionResult<T>> GetById(string id)
+  [HttpGet("{uuid:guid}")]
+  public virtual async Task<ActionResult<T>> GetByUuId(Guid uuid)
   {
-    T? entity = null;
-
-    if (int.TryParse(id, out var intId))
-    {
-      entity = await _db.FirstOrDefaultAsync(e => EF.Property<int>(e, "Id") == intId);
-    }
-    else if (Guid.TryParse(id, out var guidId))
-    {
-      entity = await _db.FirstOrDefaultAsync(e => e.Uuid == guidId);
-    }
+    var entity = await _db.FirstOrDefaultAsync(e => e.Uuid == uuid);
 
     return entity is null ? NotFound() : Ok(entity);
   }
 
-  [HttpPost]
+  [HttpPost(Name = "Create")]
   public virtual async Task<ActionResult<T>> Create(T entity)
   {
     _db.Add(entity);
     await _context.SaveChangesAsync();
-    return CreatedAtAction(nameof(GetById), new { id = entity.Uuid }, entity);
+    return CreatedAtAction(nameof(GetByUuId), new { id = entity.Uuid }, entity);
   }
 
-  [HttpPatch("{uuid}/trash")]
+  [HttpDelete("{uuid:guid}/trash")]
   public virtual async Task<IActionResult> Trash(Guid uuid)
   {
     var entity = await _db.FirstOrDefaultAsync(e => e.Uuid == uuid);
@@ -59,7 +50,7 @@ public abstract class Controller<T> : ControllerBase where T : Model
     return NoContent();
   }
 
-  [HttpPatch("{uuid}/restore")]
+  [HttpDelete("{uuid:guid}/restore")]
   public virtual async Task<IActionResult> Restore(Guid uuid)
   {
     var entity = await _db
@@ -73,7 +64,7 @@ public abstract class Controller<T> : ControllerBase where T : Model
     return NoContent();
   }
 
-  [HttpDelete("{uuid}")]
+  [HttpDelete("{uuid:guid}")]
   public virtual async Task<IActionResult> Delete(Guid uuid)
   {
     var entity = await _db

@@ -20,5 +20,17 @@ namespace Ctor.Extensions
 
             return services;
         }
+
+        public static IApplicationBuilder UseSwaggerDocumentation(this IApplicationBuilder app)
+        {
+            app.UseSwagger(); // Serves swagger.json
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Babago API V1"); // UI page
+            });
+
+            return app;
+        }
     }
 }
