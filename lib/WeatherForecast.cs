@@ -1,13 +1,13 @@
 namespace Ctor.Lib;
 
+public record WeatherForecastDto(DateOnly Date, int TemperatureC, string? Summary)
+{
+    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+}
+
 public static class WeatherForecast
 {
-    public record WeatherForecastRecord(DateOnly Date, int TemperatureC, string? Summary)
-    {
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-    }
-
-    public static WeatherForecastRecord[] Handle()
+    public static WeatherForecastDto[] Handle()
     {
         // List of possible weather descriptions
         var summaries = new[]
@@ -17,7 +17,7 @@ public static class WeatherForecast
         };
 
         // Create a list to hold the results
-        var forecastList = new List<WeatherForecastRecord>();
+        var forecastList = new List<WeatherForecastDto>();
 
         // Loop through the next 5 days
         for (int i = 1; i <= 5; i++)
@@ -33,7 +33,7 @@ public static class WeatherForecast
             var summary = summaries[randomIndex];
 
             // Create a new record
-            var forecast = new WeatherForecastRecord(date, temperatureC, summary);
+            var forecast = new WeatherForecastDto(date, temperatureC, summary);
 
             // Add it to the list
             forecastList.Add(forecast);

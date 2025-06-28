@@ -1,6 +1,6 @@
 # Ctor
 
-Dispatch & Logistics Services | Babago
+Dispatch & Logistics Services | Babago API
 
 [![C#](https://img.shields.io/badge/CSharp-13.x-178600.svg)](https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/overview)
 [![DotNet](https://img.shields.io/badge/.NET-9.x-68217A.svg)](https://learn.microsoft.com/en-us/aspnet/core/tutorials/min-web-api?view=aspnetcore-9.0&tabs=visual-studio)
@@ -32,12 +32,12 @@ dotnet watch run
 
 ## Documentation
 
-| Title                                                     | URL                                                                                                         |
-| :------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------- |
-| Build a web API with minimal API, ASP.NET Core, and .NET | https://learn.microsoft.com/en-us/training/modules/build-web-api-minimal-api/?WT.mc_id=dotnet-35129-website |
-| Build REST APIs in .NET 9 (freeCodeCamp.org)             | https://www.youtube.com/watch?app=desktop&v=38GNKtclDdE                                                     |
-| ASP.NET Core Web API .NET 6 2022 (Teddy Smith)           | https://www.youtube.com/playlist?list=PL82C6-O4XrHdiS10BLh23x71ve9mQCln0                                    |
-
+| Title                                  | URL                                                                                                         |
+| :------------------------------------- | :---------------------------------------------------------------------------------------------------------- |
+| C# Tutorial                            | https://www.w3schools.com/cs/index.php                                                                      |
+| REST APIs in .NET 9 (freeCodeCamp.org) | https://www.youtube.com/watch?app=desktop&v=38GNKtclDdE                                                     |
+| Getting Started with Minimal API       | https://learn.microsoft.com/en-us/training/modules/build-web-api-minimal-api/?WT.mc_id=dotnet-35129-website |
+| Web API .NET 6 2022 (Teddy Smith)      | https://www.youtube.com/playlist?list=PL82C6-O4XrHdiS10BLh23x71ve9mQCln0                                    |
 
 ## Screenshots
 
